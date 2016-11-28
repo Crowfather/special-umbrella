@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">DVA232_labb1</string>
+    <string name="app_name">calc</string>
+    <string name="edit_message"></string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="add">+</string>
+    <string name="equal">=</string>
+    <string name="cancel">C</string>
+
+
 </resources>
