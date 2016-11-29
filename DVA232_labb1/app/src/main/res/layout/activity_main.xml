@@ -35,16 +35,16 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:onClick="Add_button"
-            android:id="@+id/Add" />
+            android:text="@string/three"
+            android:onClick="Three_button"
+            android:id="@+id/Three" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/equal"
-            android:onClick="Equal_button"
-            android:id="@+id/Equal" />
+            android:text="@string/add"
+            android:onClick="Add_button"
+            android:id="@+id/Add" />
 
     </LinearLayout>
     <LinearLayout
@@ -57,30 +57,30 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/one"
-            android:onClick="One_button"
-            android:id="@+id/One" />
+            android:text="@string/four"
+            android:onClick="Four_button"
+            android:id="@+id/Four" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/two"
-            android:onClick="Two_button"
-            android:id="@+id/Two" />
+            android:text="@string/five"
+            android:onClick="Five_button"
+            android:id="@+id/Five" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:onClick="Add_button"
-            android:id="@+id/Add" />
+            android:text="@string/six"
+            android:onClick="Six_button"
+            android:id="@+id/Six" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/equal"
-            android:onClick="Equal_button"
-            android:id="@+id/Equal" />
+            android:text="@string/subtract"
+            android:onClick="Subtract_button"
+            android:id="@+id/Subtract" />
 
     </LinearLayout>
     <LinearLayout
@@ -93,30 +93,30 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/one"
-            android:onClick="One_button"
-            android:id="@+id/One" />
+            android:text="@string/seven"
+            android:onClick="Seven_button"
+            android:id="@+id/Seven" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/two"
-            android:onClick="Two_button"
-            android:id="@+id/Two" />
+            android:text="@string/eight"
+            android:onClick="Eight_button"
+            android:id="@+id/Eight" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:onClick="Add_button"
-            android:id="@+id/Add" />
+            android:text="@string/nine"
+            android:onClick="Nine_button"
+            android:id="@+id/Nine" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/equal"
-            android:onClick="Equal_button"
-            android:id="@+id/Equal" />
+            android:text="@string/multiply"
+            android:onClick="Multiply_button"
+            android:id="@+id/Multiply" />
 
     </LinearLayout>
     <LinearLayout
@@ -125,34 +125,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/one"
-            android:onClick="One_button"
-            android:id="@+id/One" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/two"
-            android:onClick="Two_button"
-            android:id="@+id/Two" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add"
-            android:onClick="Add_button"
-            android:id="@+id/Add" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/cancel"
-            android:onClick="cancel_button"
-            android:id="@+id/cancel" />
+            android:onClick="Cancel_button"
+            android:id="@+id/Cancel" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zero"
+            android:onClick="Zero_button"
+            android:id="@+id/Zero" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/equal"
+            android:onClick="Equal_button"
+            android:id="@+id/Equal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/divide"
+            android:onClick="Divide_button"
+            android:id="@+id/Divide" />
 
     </LinearLayout>
 
