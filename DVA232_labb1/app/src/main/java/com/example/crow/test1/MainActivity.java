@@ -117,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
         else {
             var1 = Integer.parseInt(calc_Text.getText().toString());
         }
-        calc_Text.setText("");
         op = '+';
         lastKeyIsOp = true;
     }
@@ -131,7 +130,6 @@ public class MainActivity extends AppCompatActivity {
         else {
             var1 = Integer.parseInt(calc_Text.getText().toString());
         }
-        calc_Text.setText("");
         op = '-';
         lastKeyIsOp = true;
     }
@@ -145,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
         else {
             var1 = Integer.parseInt(calc_Text.getText().toString());
         }
-        calc_Text.setText("");
         op = '/';
         lastKeyIsOp = true;
     }
@@ -158,7 +155,6 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             var1 = Integer.parseInt(calc_Text.getText().toString());
-            calc_Text.setText("");
         }
         op = '*';
         lastKeyIsOp = true;
