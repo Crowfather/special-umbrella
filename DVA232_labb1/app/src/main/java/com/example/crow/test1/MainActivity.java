@@ -166,8 +166,19 @@ public class MainActivity extends AppCompatActivity {
     public void Equal_button(View view)
     {
         var2 = Integer.parseInt(calc_Text.getText().toString());
-        if(op == '+') {
-            var2 = var1 + var2;
+        switch (op){
+            case '+':
+                var2 = var1 + var2;
+                break;
+            case '-':
+                var2 = var1 - var2;
+                break;
+            case '*':
+                var2 = var1 * var2;
+                break;
+            case'/':
+                var2 = var1 / var2;
+                break;
         }
 
         calc_Text.setText(Integer.toString(var2));
