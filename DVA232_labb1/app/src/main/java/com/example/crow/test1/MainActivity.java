@@ -184,7 +184,6 @@ public class MainActivity extends AppCompatActivity {
     {
         var1 = 0;
         var2 = 0;
-        op = "";
         calc_Text.setText("");
 
     }
