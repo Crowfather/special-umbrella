@@ -1,5 +1,6 @@
 package com.example.crow.test1;
 
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,8 +10,8 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    int var1 = 0;
-    int var2 = 0;
+    Integer var1 = null;
+    Integer var2 = null;
     char op;
     boolean lastKeyIsOp = false;
 
@@ -109,10 +110,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Add_button(View view)
     {
-        if(var1 != 0){
-            var2 = Integer.parseInt(calc_Text.getText().toString());
-            var1 += var2;
-            calc_Text.setText(Integer.toString(var1));
+        if(var1 != null){
+            MyEquals();
         }
         else {
             var1 = Integer.parseInt(calc_Text.getText().toString());
@@ -122,10 +121,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Subtract_button(View view)
     {
-        if(var1 != 0){
-            var2 = Integer.parseInt(calc_Text.getText().toString());
-            var1 -= var2;
-            calc_Text.setText(Integer.toString(var1));
+        if(var1 != null){
+            MyEquals();
         }
         else {
             var1 = Integer.parseInt(calc_Text.getText().toString());
@@ -135,10 +132,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Divide_button(View view)
     {
-        if(var1 != 0){
-            var2 = Integer.parseInt(calc_Text.getText().toString());
-            var1 = var1 / var2;
-            calc_Text.setText(Integer.toString(var1));
+        if(var1 != null){
+            MyEquals();
         }
         else {
             var1 = Integer.parseInt(calc_Text.getText().toString());
@@ -148,10 +143,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Multiply_button(View view)
     {
-        if(var1 != 0){
-            var2 = Integer.parseInt(calc_Text.getText().toString());
-            var1 *= var2;
-            calc_Text.setText(Integer.toString(var1));
+        if(var1 != null){
+            MyEquals();
         }
         else {
             var1 = Integer.parseInt(calc_Text.getText().toString());
@@ -161,30 +154,33 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Equal_button(View view)
     {
-        var2 = Integer.parseInt(calc_Text.getText().toString());
-        switch (op){
-            case '+':
-                var2 = var1 + var2;
-                break;
-            case '-':
-                var2 = var1 - var2;
-                break;
-            case '*':
-                var2 = var1 * var2;
-                break;
-            case'/':
-                var2 = var1 / var2;
-                break;
-        }
-
-        calc_Text.setText(Integer.toString(var2));
-        lastKeyIsOp = true;
+        MyEquals();
     }
     public void Cancel_button(View view)
     {
-        var1 = 0;
-        var2 = 0;
+        var1 = null;
+        var2 = null;
         calc_Text.setText("");
 
+    }
+    public void MyEquals()
+    {
+        var2 = Integer.parseInt(calc_Text.getText().toString());
+        switch (op){
+            case '+':
+                var1 = var1 + var2;
+                break;
+            case '-':
+                var1 = var1 - var2;
+                break;
+            case '*':
+                var1 = var1 * var2;
+                break;
+            case'/':
+                var1 = var1 / var2;
+                break;
+        }
+
+        calc_Text.setText(Integer.toString(var1));
     }
 }
