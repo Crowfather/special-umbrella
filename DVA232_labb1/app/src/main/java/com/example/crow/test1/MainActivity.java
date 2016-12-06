@@ -178,17 +178,21 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Cancel_button(View view)
     {
+        Cancel();
+    }
+    private void Cancel(){
         var1 = null;
         var2 = null;
         temp = null;
         calc_Text.setText("");
-
+        lastKeyIsOp = true;
     }
-    public void MyEquals()
+    private void MyEquals()
     {
         if(temp != null) {
             if (var1 != null) {
                 var2 = Long.parseLong(temp);
+                temp = null;
 
                 switch (op) {
                     case '+':
@@ -203,8 +207,11 @@ public class MainActivity extends AppCompatActivity {
                     case '/':
                         if (var2 != 0) {
                             var1 = var1 / var2;
-                        } else
+                        } else {
+                            Cancel();
                             calc_Text.setText(getString(R.string.divideByZero));
+                            return;
+                        }
 
                         break;
 
