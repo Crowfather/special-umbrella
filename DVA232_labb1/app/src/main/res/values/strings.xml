@@ -17,6 +17,7 @@
     <string name="divide">/</string>
     <string name="equal">=</string>
     <string name="cancel">C</string>
+    <string name="divideByZero">Divide by zero error</string>
 
 
 </resources>

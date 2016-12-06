@@ -10,8 +10,8 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    Integer var1 = null;
-    Integer var2 = null;
+    Long var1 = null;
+    Long var2 = null;
     char op;
     boolean lastKeyIsOp = false;
 
@@ -114,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
             MyEquals();
         }
         else {
-            var1 = Integer.parseInt(calc_Text.getText().toString());
+            var1 = Long.parseLong(calc_Text.getText().toString());
         }
         op = '+';
         lastKeyIsOp = true;
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
             MyEquals();
         }
         else {
-            var1 = Integer.parseInt(calc_Text.getText().toString());
+            var1 = Long.parseLong(calc_Text.getText().toString());
         }
         op = '-';
         lastKeyIsOp = true;
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
             MyEquals();
         }
         else {
-            var1 = Integer.parseInt(calc_Text.getText().toString());
+            var1 = Long.parseLong(calc_Text.getText().toString());
         }
         op = '/';
         lastKeyIsOp = true;
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
             MyEquals();
         }
         else {
-            var1 = Integer.parseInt(calc_Text.getText().toString());
+            var1 = Long.parseLong(calc_Text.getText().toString());
         }
         op = '*';
         lastKeyIsOp = true;
@@ -165,22 +165,29 @@ public class MainActivity extends AppCompatActivity {
     }
     public void MyEquals()
     {
-        var2 = Integer.parseInt(calc_Text.getText().toString());
-        switch (op){
-            case '+':
-                var1 = var1 + var2;
-                break;
-            case '-':
-                var1 = var1 - var2;
-                break;
-            case '*':
-                var1 = var1 * var2;
-                break;
-            case'/':
-                var1 = var1 / var2;
-                break;
-        }
+        if(var1 != null) {
+            var2 = Long.parseLong(calc_Text.getText().toString());
+            switch (op) {
+                case '+':
+                    var1 = var1 + var2;
+                    break;
+                case '-':
+                    var1 = var1 - var2;
+                    break;
+                case '*':
+                    var1 = var1 * var2;
+                    break;
+                case '/':
+                    if (var2 != 0) {
+                        var1 = var1 / var2;
+                    } else
+                        calc_Text.setText(getString(R.string.divideByZero));
 
-        calc_Text.setText(Integer.toString(var1));
+                    break;
+
+            }
+
+            calc_Text.setText(Long.toString(var1));
+        }
     }
 }
