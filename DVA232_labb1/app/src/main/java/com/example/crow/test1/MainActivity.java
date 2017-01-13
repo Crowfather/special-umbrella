@@ -14,7 +14,8 @@ public class MainActivity extends AppCompatActivity {
     Long var1 = null;
     Long var2 = null;
     char op;
-    boolean lastKeyIsOp = true;
+    boolean LastPressedIsEqual = false;
+    boolean LastPressedIsOp = false;
 
     EditText calc_Text;
 
@@ -29,152 +30,94 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void One_button(View view)
-    {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("1");
-            temp = "1";
-        }
-        else {
-            temp += "1";
-            calc_Text.append("1");
-        }
-
-        lastKeyIsOp = false;
+    public void One_button(View view) {
+        ButtonFunctions("1");
     }
 
     public void Two_button(View view)
     {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("2");
-            temp = "2";
-        }
-        else {
-            temp += "2";
-            calc_Text.append("2");
-        }
-
-        lastKeyIsOp = false;
+        ButtonFunctions("2");
     }
     public void Three_button(View view)
     {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("3");
-            temp = "3";
-        }
-        else {
-            temp += "3";
-            calc_Text.append("3");
-        }
-        lastKeyIsOp = false;
+        ButtonFunctions("3");
     }
     public void Four_button(View view)
     {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("4");
-            temp = "4";
-        }
-        else {
-            temp += "4";
-            calc_Text.append("4");
-        }
-        lastKeyIsOp = false;
+        ButtonFunctions("4");
     }
     public void Five_button(View view)
     {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("5");
-            temp = "5";
-        }
-        else {
-            temp += "5";
-            calc_Text.append("5");
-        }
-        lastKeyIsOp = false;
+        ButtonFunctions("5");
     }
     public void Six_button(View view)
     {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("6");
-            temp = "6";
-        }
-        else {
-            temp += "6";
-            calc_Text.append("6");
-        }
-        lastKeyIsOp = false;
+        ButtonFunctions("6");
     }
     public void Seven_button(View view)
     {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("7");
-            temp = "7";
-        }
-        else {
-            temp += "7";
-            calc_Text.append("7");
-        }
-        lastKeyIsOp = false;
+        ButtonFunctions("7");
     }
     public void Eight_button(View view)
     {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("8");
-            temp = "8";
-        }
-        else {
-            temp += "8";
-            calc_Text.append("8");
-        }
-        lastKeyIsOp = false;
+        ButtonFunctions("8");
     }
     public void Nine_button(View view)
     {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("9");
-            temp = "9";
-        }
-        else {
-            temp += "9";
-            calc_Text.append("9");
-        }
-        lastKeyIsOp = false;
+        ButtonFunctions("9");
     }
     public void Zero_button(View view)
     {
-        if(lastKeyIsOp == true) {
-            calc_Text.setText("0");
-            temp = "0";
-        }
-        else {
-            temp += "0";
-            calc_Text.append("0");
-        }
-        lastKeyIsOp = false;
+        ButtonFunctions("0");
     }
     public void Add_button(View view)
     {
         MyEquals();
         op = '+';
+        if(LastPressedIsOp = true)
+        {
+            calc_Text.setText(Long.toString(var1)+op);
+        }
+        else
+        calc_Text.append("+");
     }
     public void Subtract_button(View view)
     {
         MyEquals();
         op = '-';
+        if(LastPressedIsOp = true)
+        {
+            calc_Text.setText(Long.toString(var1)+op);
+        }
+        else
+        calc_Text.append("-");
     }
     public void Divide_button(View view)
     {
         MyEquals();
         op = '/';
+        if(LastPressedIsOp = true)
+        {
+            calc_Text.setText(Long.toString(var1)+op);
+        }
+        else
+        calc_Text.append("/");
     }
     public void Multiply_button(View view)
     {
         MyEquals();
         op = '*';
+        if(LastPressedIsOp = true)
+        {
+            calc_Text.setText(Long.toString(var1)+op);
+        }
+        else
+            calc_Text.append("*");
     }
     public void Equal_button(View view)
     {
         MyEquals();
+        LastPressedIsEqual = true;
     }
     public void Cancel_button(View view)
     {
@@ -185,7 +128,6 @@ public class MainActivity extends AppCompatActivity {
         var2 = null;
         temp = null;
         calc_Text.setText("");
-        lastKeyIsOp = true;
     }
     private void MyEquals()
     {
@@ -222,7 +164,29 @@ public class MainActivity extends AppCompatActivity {
                 var1 = Long.parseLong(temp);
                 temp = null;
             }
-            lastKeyIsOp = true;
+
         }
+    }
+    private void ButtonFunctions(String s)
+    {
+        if(LastPressedIsEqual == true && LastPressedIsOp == false)
+        {
+            Cancel();
+
+        }
+        if(temp == null && var1 == null) {
+            calc_Text.setText(s);
+            temp = s;
+        }
+        else if(temp == null && var1 != null){
+            temp = s;
+            calc_Text.append(s);
+        }
+        else{
+            temp += s;
+            calc_Text.append(s);
+        }
+        LastPressedIsOp = false;
+        LastPressedIsEqual = false;
     }
 }
