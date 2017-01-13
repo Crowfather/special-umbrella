@@ -74,8 +74,4 @@ public class Player_Movement : MonoBehaviour {
             SceneManager.LoadScene(currentLevel);
         }
 	}
-//<<<<<<< HEAD
-
-//=======
-//>>>>>>> origin/master
 }

@@ -11,12 +11,19 @@ public class PowerUp : MonoBehaviour {
     //float timer = 20;
     float duration = 3;
     float smoothness = 0.02f;
+    public GameObject displayPoints;
+    public GameObject timer;
+    Timer time;
+    displayPoints dPoints;
+ 
 
     // Use this for initialization
     void Start () {
         rend = GetComponent<Renderer>();
         currentColor = /*defaultColor =*/ rend.material.color;
         Screen.sleepTimeout = SleepTimeout.NeverSleep; //Förhindrar att skärmen släcker sig
+        time = timer.gameObject.GetComponent<Timer>();
+        dPoints = displayPoints.gameObject.GetComponent<displayPoints>();
 	}
 	
 	// Update is called once per frame
@@ -37,20 +44,24 @@ public class PowerUp : MonoBehaviour {
         rend.material.color = currentColor;
 	}
 
-    void OnCollisionEnter(Collision other)
-    {
+        void OnTriggerEnter(Collider other) {
         if (other.gameObject.CompareTag("PowerUp"))
         {
             Destroy(other.gameObject);
+            time.timeremaining += 5;
+            dPoints.points += 1;
+            //Destroy(other.gameObject);
             //rend.material.SetColor(0, Color.black);
             //activate = true;
             //changeColor();
+            other.gameObject.SetActive(false);
             newColor = other.gameObject.GetComponent<Renderer>().material.color;
             StopAllCoroutines();
             StartCoroutine(LerpColor(currentColor, newColor));  // coroutine = asynkron funktion tror jag
             //rend.material.color = new Color(0, 0, 0);
         }
-    }
+        }
+    
 
     IEnumerator LerpColor(Color from, Color to) //Linjär interpolerar från en färg till en annan över duration sekunder med smoothness mjukhet
     {
